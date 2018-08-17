@@ -3,6 +3,7 @@
 > Implementation of a simple ticket service that facilitates the discovery, temporary hold, and final reservation of seats within a high-demand performance.
 venue.
 For example, see the seating arrangement below.
+```
  ----------[[ STAGE ]]----------
  ---------------------------------
  sssssssssssssssssssssssssssssssss
@@ -14,7 +15,7 @@ For example, see the seating arrangement below.
  sssssssssssssssssssssssssssssssss
  sssssssssssssssssssssssssssssssss
  sssssssssssssssssssssssssssssssss
- 
+```
 ## Provide the following functions
 
 - Find the number of seats available within the venue
@@ -31,3 +32,31 @@ Assumptions:
 - The solution and tests should build and execute entirely via the command line using either Maven or Gradle as the build tool
 - A README file should be included in your submission that documents your assumptions and includes instructions for building the solution and executing the tests
 - Implementation mechanisms such as disk-based storage, a REST API, and a front-end GUI are not required
+
+## Assumptions and Design
+
+- 
+
+## Instructions
+
+### Installing 
+
+```
+git clone https://github.com/tili2983/ticket-service.git
+cd ticket-service
+```
+### Building
+`mvn clean package`
+
+### Testing
+`mvn test`
+
+
+## Out of Scope
+-  Web services
+-  REST API
+-  Front-end GUI
+-  Disk-based storage
+-  Billing and payment processing
+-  More humanized seating ratings and assignment algorithm
+
