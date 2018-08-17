@@ -38,12 +38,12 @@ Assumptions:
 - The ticket service implementation is for standalone usage. The idea is for a separate web service application to use [SimpleTicketService](https://github.com/tili2983/ticket-service/blob/master/src/main/java/service/SimpleTicketService.java) by creating an instance of it.
 - The ticket service implementation involves booking or reservation only and billing or payment handling are not included.
 - The ticket service provides a simple rating algorithm in [FrontMiddleBetterRater](https://github.com/tili2983/ticket-service/blob/master/src/main/java/rater/FrontMiddleBetterRater.java) to pick the best seats for holding seats but does not guarantee the same seat hold would have seats side by side.
-- The same customer (identified by email address) can hold or reserve any number of seats any number of times as long as there is available seats
+- The same customer (identified by email address) can hold or reserve any number of seats any number of times as long as there is available seats.
 - Seat hold expiration is configurable.
-- Instead of exposing SeatHold object, SimpleTicketService only return the ID of the SeaHold object to the caller service through the `holdAvailableSeats` method.
+- Instead of exposing SeatHold object, SimpleTicketService only return the ID of the SeaHold object to the caller service through the `holdAvailableSeats()` method.
 - A cron-job like service should call `removeExpiredSeatHolds()` method to clean up expired seat holds periodically.
-- Data storage is out of scope. Once the service ends, all seat holds and reservation stored in HashMap objects in SimpleTicketService will be lost.
-- Every SimpleTicketService has a [SimpleSeatingService](https://github.com/tili2983/ticket-service/blob/master/src/main/java/service/SimpleSeatingService.java) instance which manages maintaining and updating the state of the seats of the given Venue object.
+- Data storage is considered out of scope. Once the service ends, all seat holds and reservation stored in HashMap objects in SimpleTicketService will be lost.
+- A SimpleTicketService instance has a [SimpleSeatingService](https://github.com/tili2983/ticket-service/blob/master/src/main/java/service/SimpleSeatingService.java) instance which manages maintaining and updating the state of the seats of the given Venue object.
 
 
 ## Instructions
